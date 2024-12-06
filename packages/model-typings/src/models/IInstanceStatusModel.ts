@@ -2,6 +2,7 @@ import type { IInstanceStatus } from '@rocket.chat/core-typings';
 import type { DeleteResult, ModifyResult, UpdateResult } from 'mongodb';
 
 import type { IBaseModel } from './IBaseModel';
+import type { UpdateResult } from 'mongodb';
 
 export interface IInstanceStatusModel extends IBaseModel<IInstanceStatus> {
 	getActiveInstanceCount(): Promise<number>;
