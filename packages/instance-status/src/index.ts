@@ -92,8 +92,6 @@ async function updateConnections(connections: number) {
 async function ping() {
 	const result = await InstanceStatusModel.setDocumentHeartbeat(ID);
 
-	console.log(`[${ID}] ping`, result.modifiedCount);
-
 	if (result.modifiedCount === 0) {
 		await registerInstance(currentInstance.name, currentInstance.extraInformation);
 	}
