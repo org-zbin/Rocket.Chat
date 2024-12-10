@@ -106,7 +106,6 @@ export const InstanceStatus = {
 	id,
 	indexExpire,
 	registerInstance,
-	updateConnections,
 	defaultPingInterval,
 	indexExpire,
 };
