@@ -3,6 +3,7 @@ import { Queue } from "./messenger.ts";
 
 export function collectMetrics() {
     return {
+        pid: Deno.pid,
         queueSize: Queue.getCurrentSize(),
     }
 };
