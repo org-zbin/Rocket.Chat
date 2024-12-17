@@ -30,7 +30,6 @@ type Handlers = {
     slashcommand: typeof slashcommandHandler;
     videoconference: typeof videoConferenceHandler;
     scheduler: typeof handleScheduler;
-    ping: (method: string, params: unknown) => 'pong';
 };
 
 const COMMAND_PING = '_zPING';
@@ -42,7 +41,6 @@ async function requestRouter({ type, payload }: Messenger.JsonRpcRequest): Promi
         slashcommand: slashcommandHandler,
         videoconference: videoConferenceHandler,
         scheduler: handleScheduler,
-        ping: (_method, _params) => 'pong',
     };
 
     // We're not handling notifications at the moment
