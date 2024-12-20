@@ -19,14 +19,6 @@ export class HomeFlextabRoom {
 		return this.page.locator('role=button[name="More"]');
 	}
 
-	get btnLeave(): Locator {
-		return this.roomInfoTab.locator('role=button[name="Leave"]');
-	}
-
-	get btnDelete(): Locator {
-		return this.roomInfoTab.locator('role=button[name="Delete"]');
-	}
-
 	getMoreOption(option: string) {
 		return this.roomInfoTab.locator(`role=menuitem[name="${option}"]`);
 	}
