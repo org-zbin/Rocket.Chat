@@ -1,0 +1,19 @@
+{
+  "name": "Rocket.Chat Development",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "20.18.0"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode"
+      ]
+    }
+  },
+  "postCreateCommand": "corepack enable && corepack prepare yarn@4.5.3 --activate",
+  "remoteUser": "node"
+}
