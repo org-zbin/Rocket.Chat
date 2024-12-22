@@ -24,6 +24,10 @@ RUN curl -fsSL https://pgp.mongodb.com/server-6.0.asc | gpg -o /usr/share/keyrin
     && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/*
 
+# Install Deno
+RUN curl -fsSL https://deno.land/x/install/install.sh | sh && \
+    mv /root/.deno/bin/deno /usr/local/bin/
+
 # Add MongoDB initialization script
 COPY mongodb-init.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/mongodb-init.sh
