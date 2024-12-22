@@ -1,6 +1,8 @@
 {
   "name": "Rocket.Chat Development",
-  "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/workspace",
   "features": {
     "ghcr.io/devcontainers/features/node:1": {
       "version": "20.18.0"
@@ -14,6 +16,7 @@
       ]
     }
   },
-  "postCreateCommand": "corepack enable && corepack prepare yarn@4.5.3 --activate",
-  "remoteUser": "node"
+  "postCreateCommand": "corepack enable && corepack prepare yarn@4.5.3 --activate && /usr/local/bin/mongodb-init.sh",
+  "remoteUser": "node",
+  "forwardPorts": [3000, 27017]
 }

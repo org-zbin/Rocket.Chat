@@ -7,3 +7,21 @@ services:
     volumes:
       - ..:/workspace:cached
     command: sleep infinity
+    environment:
+      - MONGO_URL=mongodb://mongodb:27017/rocketchat
+      - MONGO_OPLOG_URL=mongodb://mongodb:27017/local
+      - ROOT_URL=http://localhost:3000
+      - PORT=3000
+    depends_on:
+      - mongodb
+
+  mongodb:
+    image: mongo:6
+    command: mongod --oplogSize 128 --replSet rs0
+    volumes:
+      - mongodb_data:/data/db
+    ports:
+      - "27017:27017"
+
+volumes:
+  mongodb_data:
